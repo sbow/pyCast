@@ -20,6 +20,7 @@ import socket
 import http.server
 import socketserver
 import threading
+import random
 
 # Change to the friendly name of your Chromecast
 CAST_NAME = 'ShaunsOfficeMonitor'
@@ -89,8 +90,14 @@ daemon.start()
 time.sleep(2)
 pprint.pprint(glob.glob(args.directory+"/"+MEDIA_FLAG))
 filesAndPath = glob.glob(args.directory+"/"+MEDIA_FLAG)
-
-fileName = os.path.basename(filesAndPath[10])
+nFiles = len(filesAndPath)
+if (nFiles==0):
+    pprint.pprint("Error: No files found")
+    sys.exit(1)
+random.seed()
+nRandom = random.random()*nFiles
+nStartFile = round(nRandom)
+fileName = os.path.basename(filesAndPath[nStartFile])
 fileUrl = urllib.parse.quote(fileName)
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("8.8.8.8", 80))
@@ -120,8 +127,8 @@ cast.media_controller.play_media(fileUri, MEDIA_TAG)
 # Wait for player_state PLAYING
 player_state = None
 has_played = False
-iPhoto = 0
-iPhotoMax = 50
+iPhoto = nStartFile 
+iPhotoMax = nFiles-1 
 while True:
     try:
         if player_state != cast.media_controller.status.player_state:
