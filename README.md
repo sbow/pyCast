@@ -2,9 +2,8 @@
 #### Shaun Bowman
 #### Jan 11 2021
 ## Purpose
-python chromecast repository
-casts images from a directory to the chromecast
-not secure! Use behind a firewall - creates a low security webserver on client machine to serve images to chromecast
+pyCast is a python chromecast repository. It casts images from a directory to the chromecast.
+ Note, NOT secure! Use behind a firewall - creates a low security webserver on client machine to serve images to chromecast.
 ## Launch command:
 python pyCast.py --show-debug --directory '/home/shaun/Pictures/iCloud' --media-flag '*.JPEG' --media-tag 'image/jpeg'
 
