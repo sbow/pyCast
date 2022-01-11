@@ -42,6 +42,8 @@ parser = argparse.ArgumentParser(
     description="Example on how to use the Media Controller to play an URL."
 )
 parser.add_argument("--show-debug", help="Enable debug log", action="store_true")
+parser.add_argument("--do-random", help="Pick media in dir at random, default false",
+                    action="store_false")
 parser.add_argument(
     "--show-zeroconf-debug", help="Enable zeroconf debug log", action="store_true"
 )
@@ -141,9 +143,13 @@ while True:
             cast.media_controller.play_media(args.url, "audio/mp3")
 
         time.sleep(PAUSE)
-        iPhoto = iPhoto + 1
-        if iPhoto > iPhotoMax:
-            iPhoto = 0
+        if args.do_random:
+            nRandom = random.random()*nFiles
+            iPhoto = round(nRandom)
+        else:
+            iPhoto = iPhoto + 1
+            if iPhoto > iPhotoMax:
+                iPhoto = 0
         fileName = os.path.basename(filesAndPath[iPhoto])
         fileUrl = urllib.parse.quote(fileName)
         fileUri = 'http://'+ipAddr+':'+'8000/'+fileUrl
