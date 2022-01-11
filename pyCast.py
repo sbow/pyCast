@@ -45,6 +45,13 @@ parser.add_argument(
     "--show-zeroconf-debug", help="Enable zeroconf debug log", action="store_true"
 )
 parser.add_argument(
+    "--media-flag", help="Media flag like *.JPEG or *.png", default=MEDIA_FLAG
+)
+parser.add_argument(
+    "--media-tag", help="Media tag like 'image/jpeg' or 'image/png'",
+    default=MEDIA_TAG
+)
+parser.add_argument(
     "--cast", help='Name of cast device (default: "%(default)s")', default=CAST_NAME
 )
 parser.add_argument(
