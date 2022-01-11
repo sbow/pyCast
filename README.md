@@ -1,7 +1,7 @@
 # pyCast Slideshow!
 #### Shaun Bowman
 #### Jan 11 2021
-### Purpose
+## Purpose
 python chromecast repository
 casts images from a directory to the chromecast
 not secure! Use behind a firewall - creates a low security webserver on client machine to serve images to chromecast
