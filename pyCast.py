@@ -63,7 +63,7 @@ import random
 # Authorship information
 __author__ = "Shaun Bowman"
 __copyright__ = "Copywrong 2022, Mazeltough Project"
-__credits__ = ["None", "Mom"]
+__credits__ = ["SoManyCopyPastes... sorry i dont know the names", "Mom"]
 __license__ = "MIT"
 __version__ = "0.420.69"
 __maintainer__ = "Shaun Bowman"
