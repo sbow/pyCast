@@ -9,7 +9,7 @@ This program allows the user to cast images to their chromecast.
 The images are of a particular type ie: ".JPEG" or ".jpg" or ".png",
 and contained in a single folder. These parameters are provided,
 among others, at command line invocation - or through tuning of
-the default parameters below.
+the default parameters in code.
 
 ## Arguments
 `--show-debug`
@@ -38,7 +38,8 @@ the default parameters below.
 does not return. Ctrl-C to exit, or launch with "&" and kill process
 
 ## Examples
-python pyCast.py --show-debug --media-flag '*.JPEG' --media-tag 'image/jpeg'
---cast 'MyChromecast' --directory '/home/dorthy/OzGirlSummerPics' --do-random
-
+```console
+yourName@yourComputer:~$ python pyCast.py --show-debug --media-flag '*.JPEG' --media-tag 'image/jpeg'
+--cast 'YourChromecast' --directory '/home/yourName/Pictures' --do-random
+```
 
