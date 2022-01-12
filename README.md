@@ -1,8 +1,4 @@
-# pyCast Slideshow! :neckbeard::godmode::basecamp::100:
-
-## Purpose
-pyCast is a python chromecast repository. It casts images from a directory to the chromecast.
- :warning: Note, NOT secure! :warning: Use behind a firewall - creates a low security webserver on client machine to serve images to chromecast.
+# pyCast Commandline Generate Chromecast Slideshow! :neckbeard::godmode::basecamp::100:
 
 ## Play a slideshow on the chromecast
 This program allows the user to cast images to their chromecast.
@@ -16,8 +12,7 @@ the default parameters in code.
     Show debugging information. False if not provided.
 
 `--do-random`
-    Select image order at random. Directory order,`me@nix:~/Pictures$ ls'
-    if not provided.
+    Select image order at random. Directory order if not provided.
 
 `--media-flag '*.jpeg'`
     Indicate via a command line regex file type to show
