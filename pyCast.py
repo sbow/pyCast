@@ -158,6 +158,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("8.8.8.8", 80))
 ipAddr = s.getsockname()[0]
 fileUri = 'http://'+ipAddr+':'+'8000/'+fileUrl
+MEDIA_URL = fileUri
 
 # -- Setup chromecast --
 # List chromecasts on the network, but don't connect
@@ -198,7 +199,7 @@ while True:
             has_played = False
             cast.media_controller.play_media(args.url, "audio/mp3")
 
-        time.sleep(args.pause)
+        time.sleep(int(args.pause))
         if args.do_random:
             nRandom = random.random()*nFiles
             iPhoto = round(nRandom)
