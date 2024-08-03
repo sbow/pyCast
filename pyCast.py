@@ -137,8 +137,8 @@ daemon.start()
 time.sleep(2)
 
 # Get list of files of specific type, in specific directory
-pprint.pprint(glob.glob(args.directory+"/"+MEDIA_FLAG))
-filesAndPath = glob.glob(args.directory+"/"+MEDIA_FLAG)
+filesAndPath = sorted(glob.glob(args.directory + "/" + args.media_flag))
+pprint.pprint(filesAndPath)
 nFiles = len(filesAndPath)
 if (nFiles==0):
     pprint.pprint("Error: No files found")
