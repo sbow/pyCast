@@ -147,7 +147,7 @@ if (nFiles==0):
 # Select starting point for slideshow
 random.seed()
 nRandom = random.random()*nFiles
-nStartFile = round(nRandom)
+nStartFile = round(nRandom) if args.do_random else 0
 
 # Build uri of first image for slideshow. This is sent to the chromecast. This
 # ends up being a mash up of the host ip address, the webserver port, and the
