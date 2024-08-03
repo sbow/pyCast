@@ -92,7 +92,7 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument("--show-debug", help="Enable debug log", action="store_true")
 parser.add_argument("--do-random", help="Pick media in dir at random, default false",
-                    action="store_false")
+                    action="store_true")
 parser.add_argument(
     "--media-flag", help="Media flag like *.JPEG or *.png", default=MEDIA_FLAG
 )
